@@ -11,10 +11,9 @@ const todoControl = document.querySelector('.todo-control'),
     if(localStorage.getItem('affairUser')) {
 
     let affair = localStorage.getItem('affairUser');
-        todoData = JSON.parse(affair);
+        JSON.parse(affair);
 
     } else {
-        console.log(false);
         
         localStorage.setItem('affairUser', JSON.stringify(todoData));
     };
@@ -52,7 +51,7 @@ todoCompleted.textContent ='';
         
         let indexElem = todoData.indexOf(item);
         
-        todoData.splice(indexElem);
+        todoData.splice(indexElem, 1);
         
         localStorage.setItem('affairUser', JSON.stringify(todoData));
 
